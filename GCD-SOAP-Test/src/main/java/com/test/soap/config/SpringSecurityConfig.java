@@ -12,11 +12,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.WebSecurity)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.springframework.security.config.annotation.web.configuration.
+	 * WebSecurityConfigurerAdapter#configure(org.springframework.security.
+	 * config.annotation.web.builders.WebSecurity)
 	 */
 	@Override
-    public void configure(WebSecurity web) throws Exception {
-         web.ignoring().antMatchers("/**");
-    }
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/**");
+	}
 }

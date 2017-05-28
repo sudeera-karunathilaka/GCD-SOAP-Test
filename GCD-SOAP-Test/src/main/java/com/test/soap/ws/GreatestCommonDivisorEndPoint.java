@@ -16,24 +16,24 @@ import io.demo.soap_web_service.GetGCDResponse;
 import io.demo.soap_web_service.GetGCDSumRequest;
 import io.demo.soap_web_service.GetGCDSumResponse;
 
-
 /**
  * The Class GreatestCommonDivisorEndPoint.
  */
 @Endpoint
 public class GreatestCommonDivisorEndPoint {
-	
+
 	/** The Constant NAMESPACE_URI. */
 	private static final String NAMESPACE_URI = "http://demo.io/soap-web-service";
-	
+
 	/** The greatest common divisor service. */
 	@Autowired
 	private GreatestCommonDivisorService greatestCommonDivisorService;
-	
+
 	/**
 	 * Gets the gcd.
 	 *
-	 * @param request the request
+	 * @param request
+	 *            the request
 	 * @return the gcd
 	 */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getGCDRequest")
@@ -47,11 +47,12 @@ public class GreatestCommonDivisorEndPoint {
 
 		return response;
 	}
-	
+
 	/**
 	 * Gets the gcd list.
 	 *
-	 * @param request the request
+	 * @param request
+	 *            the request
 	 * @return the gcd list
 	 */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getGCDListRequest")
@@ -62,11 +63,12 @@ public class GreatestCommonDivisorEndPoint {
 
 		return response;
 	}
-	
+
 	/**
 	 * Gets the gcd sum.
 	 *
-	 * @param request the request
+	 * @param request
+	 *            the request
 	 * @return the gcd sum
 	 */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getGCDSumRequest")

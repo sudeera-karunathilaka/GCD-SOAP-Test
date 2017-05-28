@@ -18,15 +18,21 @@ import com.test.soap.service.GreatestCommonDivisorService;
 @Service
 public class GreatestCommonDivisorServiceImpl implements GreatestCommonDivisorService {
 
+	/** The greatest common divisor repository. */
 	@Autowired
 	private GreatestCommonDivisorRepository greatestCommonDivisorRepository;
 
+	/** The jms template. */
 	@Autowired
 	JmsTemplate jmsTemplate;
 
+	/** The destination queue. */
 	@Value("${inbound.endpoint}")
 	String destinationQueue;
 
+	/* (non-Javadoc)
+	 * @see com.test.soap.service.GreatestCommonDivisorService#receiveGCDNumber()
+	 */
 	@Override
 	public GCDNumber receiveGCDNumber() {
 		return (GCDNumber) jmsTemplate.receiveAndConvert(destinationQueue);
@@ -98,6 +104,9 @@ public class GreatestCommonDivisorServiceImpl implements GreatestCommonDivisorSe
 		return greatestCommonDivisorRepository.findSumOfGcds();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.test.soap.service.GreatestCommonDivisorService#saveGCD(int)
+	 */
 	@Override
 	public void saveGCD(int gcd) {
 		GreatestCommonDivisor gcdObj = new GreatestCommonDivisor();
